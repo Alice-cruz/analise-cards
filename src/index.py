@@ -1,7 +1,7 @@
 def get_card_type(card_number):
-    card_number = card_number.replace(" ", "")  # Remove spaces if any
+    card_number = card_number.replace(" ", "")  # remove os espaços
 
-    # Define card types with prefixes and lengths
+    # lista das bandeiras
     card_types = {
         "MasterCard": {"prefixes": ["51", "52", "53", "54", "55"], "lengths": [16]},
         "Visa": {"prefixes": ["4"], "lengths": [13, 16, 19]},
@@ -15,7 +15,7 @@ def get_card_type(card_number):
         "Aura": {"prefixes": ["50"], "lengths": [16]},
     }
 
-    # Check card type
+    # checa se bate e eh valido
     for card_type, details in card_types.items():
         prefixes = details["prefixes"]
         lengths = details["lengths"]
@@ -26,7 +26,7 @@ def get_card_type(card_number):
     return "Unknown Card Type"
 
 
-# Input from user
+# Inputa o numero
 card_number = input("Enter your credit card number: ")
 card_type = get_card_type(card_number)
 print(f"The card type is: {card_type}")
